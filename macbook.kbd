@@ -1,0 +1,92 @@
+(defcfg
+  input (iokit-name "Apple Internal Keyboard / Trackpad")
+  output (kext)
+  fallthrough true
+)
+
+(defalias
+  fn  (layer-toggle function)
+  ext (layer-toggle extend)
+  sym (layer-toggle symbol)
+
+  esc_ext (tap-next esc  @ext)
+  bsp_sym (tap-next bspc @sym)
+  
+  colemak (layer-switch colemak-dh)
+  qwerty  (layer-switch qwerty)
+
+  ;; colemak-dh home row mods
+  ctl_a (tap-hold-next-release 175 a lctl)
+  alt_r (tap-hold-next-release 175 r lalt)
+  met_s (tap-hold-next-release 175 s lmet)
+  sft_t (tap-hold-next-release 175 t lsft)
+  sft_n (tap-hold-next-release 175 n rsft)
+  met_e (tap-hold-next-release 175 e rmet)
+  alt_i (tap-hold-next-release 175 i lalt)
+  ctl_o (tap-hold-next-release 175 o rctl)
+
+  ;; qwerty home row mods
+  ;; ctl_a (tap-hold-next-release 175 a lctl)
+  alt_s (tap-hold-next-release 175 s lalt)
+  met_d (tap-hold-next-release 175 d lmet)
+  sft_f (tap-hold-next-release 175 f lsft)
+  sft_j (tap-hold-next-release 175 j rsft)
+  met_k (tap-hold-next-release 175 k rmet)
+  alt_l (tap-hold-next-release 175 l lalt)
+  ctl_; (tap-hold-next-release 175 ; rctl)
+)
+
+(defsrc
+  esc      f1       f2       f3       f4       f5       f6       f7       f8       f9       f10      f11      f12
+  grv      1        2        3        4        5        6        7        8        9        0        -        =        bspc
+  tab      q        w        e        r        t        y        u        i        o        p        [        ]        \
+  caps     a        s        d        f        g        h        j        k        l        ;        '        ret
+  lsft     z        x        c        v        b        n        m        ,        .        /        rsft     up
+  fn       lctl     lalt     lmet                       spc                        rmet     ralt     left     down     rght
+)
+
+(deflayer colemak-dh
+  _        brdn     brup     lp       mctl     bldn     blup     prev     pp       next     mute     vold     volu
+  _        _        _        _        _        _        _        _        _        _        _        _        _        _
+  _        q        w        f        p        b        j        l        u        y        ;        _        _        _
+  @esc_ext @ctl_a   @alt_r   @met_s   @sft_t   g        m        @sft_n   @met_e   @alt_i   @ctl_o   _        _
+  _        x        c        d        v        z        k        h        _        _        _        _        _
+  @fn      _        _        _                          _                          @bsp_sym _        _        _        _
+)
+
+(deflayer qwerty
+  _        brdn     brup     lp       mctl     bldn     blup     prev     pp       next     mute     vold     volu
+  _        _        _        _        _        _        _        _        _        _        _        _        _        _
+  _        _        _        _        _        _        _        _        _        _        _        _        _        _
+  @esc_ext @ctl_a   @alt_s   @met_d   @sft_f   _        _        @sft_j   @met_k   @alt_l   @ctl_;   _        _
+  _        _        _        _        _        _        _        _        _        _        _        _        _
+  @fn      _        _        _                          _                          @bsp_sym _        _        _        _
+)
+
+(deflayer extend
+  _        _        _        _        _        _        _        _        _        _        _        _        _
+  _        _        _        _        _        _        _        _        _        _        _        _        _        _
+  _        _        _        _        _        _        _        _        _        _        _        _        _        _
+  _        _        _        _        _        _        left     down     up       right    _        _        _
+  _        _        _        _        _        _        _        _        _        _        _        _        _
+  _        _        _        _                          _                          _        _        _        _        _
+)
+
+(deflayer symbol
+  _        _        _        _        _        _        _        _        _        _        _        _        _
+  _        _        _        _        _        _        _        _        _        _        _        _        _        _
+  _        1        2        3        4        5        6        7        8        9        0        _        _        _
+  _        !        +       \(       \)        #        |        -        =       \_        *        _        _
+  _        @        {        }        &        $        `        [        ]        %        ^        _        _
+  
+  _        _        _        _                          _                          _        _        _        _        _
+)
+
+(deflayer function
+  _        f1       f2       f3       f4       f5       f6       f7       f8       f9       f10      f11      f12
+  _        _        _        _        _        _        _        _        _        _        _        _        _        _
+  _        _        _        _        _        _        _        _        _        _        _        _        _        _
+  _        _        _        _        _        _        _        @colemak @qwerty  _        _        _        _
+  _        _        _        _        _        _        _        _        _        _        _        _        _
+  _        _        _        _                          _                          _        _        _        _        _
+)
