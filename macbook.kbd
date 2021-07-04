@@ -34,6 +34,13 @@
   met_k (tap-hold-next-release 175 k rmet)
   alt_l (tap-hold-next-release 175 l lalt)
   ctl_; (tap-hold-next-release 175 ; rctl)
+
+  ;; extend layer aliases
+  undo  (around lmet z)
+  redo  (around lsft @undo)
+  cut   (around lmet x)
+  copy  (around lmet c)
+  paste (around lmet v)
 )
 
 (defsrc
@@ -41,7 +48,7 @@
   grv      1        2        3        4        5        6        7        8        9        0        -        =        bspc
   tab      q        w        e        r        t        y        u        i        o        p        [        ]        \
   caps     a        s        d        f        g        h        j        k        l        ;        '        ret
-  lsft     z        x        c        v        b        n        m        ,        .        /        rsft     up
+  lsft     x        c        v        b        z        n        m        ,        .        /        rsft     up
   fn       lctl     lalt     lmet                       spc                        rmet     ralt     left     down     rght
 )
 
@@ -68,7 +75,7 @@
   _        _        _        _        _        _        _        _        _        _        _        _        _        _
   _        _        _        _        _        _        _        _        _        _        _        _        _        _
   _        _        _        _        _        _        left     down     up       right    _        _        _
-  _        _        _        _        _        _        _        _        _        _        _        _        _
+  _        @undo    @cut     @copy    @paste   @redo    _        _        _        _        _        _        _
   _        _        _        _                          _                          _        _        _        _        _
 )
 
