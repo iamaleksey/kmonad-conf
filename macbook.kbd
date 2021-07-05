@@ -25,12 +25,13 @@
   @fn      _        _        _                          _                          @bsp_sym _        _        _        _
 )
 
+;; QWERTY with Angle Mod (https://colemakmods.github.io/ergonomic-mods/angle.html)
 (deflayer qwerty
   _        brdn     brup     lp       mctl     bldn     blup     prev     pp       next     mute     vold     volu
   _        _        _        _        _        _        _        _        _        _        _        _        _        _
   _        _        _        _        _        _        _        _        _        _        _        _        _        _
   @esc_ext @ctl_a   @alt_s   @met_d   @sft_f   _        _        @sft_j   @met_k   @alt_l   @ctl_;   _        _
-  _        _        _        _        _        _        _        _        _        _        _        _        _
+  _        x        c        v        b        z        _        _        _        _        _        _        _
   @fn      _        _        _                          _                          @bsp_sym _        _        _        _
 )
 
