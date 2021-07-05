@@ -37,9 +37,9 @@
 (deflayer extend
   _        _        _        _        _        _        _        _        _        _        _        _        _
   _        _        _        _        _        _        _        _        _        _        _        _        _        _
-  _        _        _        _        _        _        _        _        _        _        _        _        _        _
-  _        lctl     lalt     lmet     lsft     _        left     down     up       right    _        _        _
-  _        @undo    @cut     @copy    @paste   @redo    _        _        _        _        _        _        _
+  _        _        _        _        _        _        @prv_wrd _        _        @nxt_wrd _        _        _        _
+  _        lctl     lalt     lmet     lsft     caps     left     down     up       right    @del_lne bspc     _
+  _        @undo    @cut     @copy    @paste   @redo    @lne_beg pgdn     pgup     @lne_end del      bspc     _
   _        _        _        _                          _                          _        _        _        _        _
 )
 
@@ -77,6 +77,23 @@
 )
 
 (defalias
+  ;; extend layer aliases
+  undo  (around lmet z)
+  redo  (around lsft @undo)
+
+  cut   (around lmet x)
+  copy  (around lmet c)
+  paste (around lmet v)
+
+  prv_wrd (around lalt left)
+  nxt_wrd (around lalt right)
+
+  lne_beg (around lmet left)
+  lne_end (around lmet right)
+  del_lne (around lmet bspc)
+)
+
+(defalias
   ;; colemak-dh home row mods
   ctl_a (tap-hold-next-release 175 a lctl)
   alt_r (tap-hold-next-release 175 r lalt)
@@ -96,15 +113,6 @@
   met_k (tap-hold-next-release 175 k rmet)
   alt_l (tap-hold-next-release 175 l lalt)
   ctl_; (tap-hold-next-release 175 ; rctl)
-)
-
-(defalias
-  ;; extend layer aliases
-  undo  (around lmet z)
-  redo  (around lsft @undo)
-  cut   (around lmet x)
-  copy  (around lmet c)
-  paste (around lmet v)
 )
 
 (defcfg
