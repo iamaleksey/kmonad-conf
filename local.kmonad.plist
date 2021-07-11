@@ -4,6 +4,8 @@
 	<dict>
 		<key>Label</key>
 		<string>local.kmonad</string>
+		<key>Nice</key>
+		<integer>-20</integer>
 		<key>ProgramArguments</key>
 		<array>
 			<string>/Users/aleksey/kmonad/bin/kmonad</string>
