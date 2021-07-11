@@ -38,9 +38,9 @@
 (deflayer extend
   _        _        _        _        _        _        _        _        _        _        _        _        _
   _        _        _        _        _        _        _        _        _        _        _        _        _        _
-  _        _        _        _        _        _        @prv_wrd _        _        @nxt_wrd _        _        _        _
-  _        lctl     lalt     lmet     lsft     caps     left     down     up       right    @del_lne bspc     _
-  _        @undo    @cut     @copy    @paste   @redo    @lne_beg pgdn     pgup     @lne_end del      bspc     _
+  _        _        _        _        _        _        pgup     @prv_wrd up       @nxt_wrd @del_lne bspc     _        _
+  _        lctl     lalt     lmet     lsft     caps     pgdn     left     down     right    del      bspc     _
+  _        @undo    @cut     @copy    @paste   @redo    _        @lne_beg _        @lne_end _        _        _
   _        _        _        _                          _                          _        _        _        _        _
 )
 
