@@ -7,7 +7,16 @@
   fn       lctl     lalt     lmet                       spc                        rmet     ralt     left     down     rght
 )
 
-(deflayer default
+(deflayer colemak
+  _        brdn     brup     lp       mctl     bldn     blup     prev     pp       next     mute     vold     volu
+  _        _        _        _        _        _        _        _        _        _        _        _        _        _
+  _        q        w        f        p        b        j        l        u        y        ;        _        _        _
+  @esc_sym @ctl_a   @alt_r   @met_s   @sft_t   g        m        @sft_n   @met_e   @alt_i   @ctl_o   _        _
+  _        x        c        d        v        z        k        h        _        _        _        _        _
+  @adj     _        _        @tab_sym                   _                          @bsp_ext _        _        _        _
+)
+
+(deflayer qwerty
   _        brdn     brup     lp       mctl     bldn     blup     prev     pp       next     mute     vold     volu
   _        _        _        _        _        _        _        _        _        _        _        _        _        _
   _        _        _        _        _        _        _        _        _        _        _        _        _        _
@@ -16,23 +25,22 @@
   @fn      _        _        _                          _                          _        _        _        _        _
 )
 
-(deflayer colemak-dh
-  _        brdn     brup     lp       mctl     bldn     blup     prev     pp       next     mute     vold     volu
+(deflayer function
+  _        f1       f2       f3       f4       f5       f6       f7       f8       f9       f10      f11      f12
   _        _        _        _        _        _        _        _        _        _        _        _        _        _
-  _        q        w        f        p        b        j        l        u        y        ;        _        _        _
-  @esc_sym @ctl_a   @alt_r   @met_s   @sft_t   g        m        @sft_n   @met_e   @alt_i   @ctl_o   _        _
-  _        x        c        d        v        z        k        h        _        _        _        _        _
-  @fn      _        _        @tab_sym                   _                          @bsp_ext _        _        _        _
+  _        _        _        _        _        _        _        _        _        _        _        _        _        _
+  _        _        _        _        _        _        _        @colemak _        _        _        _        _
+  _        _        _        _        _        _        _        _        _        _        _        _        _
+  _        _        _        _                          _                          _        _        _        _        _
 )
 
-;; QWERTY with Angle Mod (https://colemakmods.github.io/ergonomic-mods/angle.html)
-(deflayer qwerty
-  _        brdn     brup     lp       mctl     bldn     blup     prev     pp       next     mute     vold     volu
+(deflayer symbol
+  _        _        _        _        _        _        _        _        _        _        _        _        _
   _        _        _        _        _        _        _        _        _        _        _        _        _        _
-  _        _        _        _        _        _        _        _        _        _        _        _        _        _
-  @esc_sym @ctl_a   @alt_s   @met_d   @sft_f   _        _        @sft_j   @met_k   @alt_l   @ctl_;   _        _
-  _        x        c        v        b        z        _        _        _        _        _        _        _
-  @fn      _        _        @tab_sym                   _                          @bsp_ext _        _        _        _
+  _        1        2        3        4        5        6        7        8        9        0        _        _        _
+  _        !        +       \(       \)        #        |        -        =       \_        *        _        _
+  _        @        {        }        &        $        `        [        ]        %        ^        _        _
+  _        _        _        _                          _                          _        _        _        _        _
 )
 
 (deflayer extend
@@ -44,34 +52,24 @@
   _        _        _        _                          _                          _        _        _        _        _
 )
 
-(deflayer symbol
+(deflayer adjust
   _        _        _        _        _        _        _        _        _        _        _        _        _
   _        _        _        _        _        _        _        _        _        _        _        _        _        _
-  _        1        2        3        4        5        6        7        8        9        0        _        _        _
-  _        !        +       \(       \)        #        |        -        =       \_        *        _        _
-  _        @        {        }        &        $        `        [        ]        %        ^        _        _
-  
-  _        _        _        _                          _                          _        _        _        _        _
-)
-
-(deflayer function
-  _        _        _        _        _        _        _        _        _        _        _        _        _
-  _        _        _        _        _        _        _        _        _        _        _        _        _        _
-  _        f1       f2       f3       f4       f5       f6       f7       f8       f9       f10      f11      f12      _
-  _        _        _        _        _        _        _        @colemak @qwerty  @default _        _        _
-  _        _        _        _        _        _        _        _        _        _        _        _        _
+  _        f1       f2       f3       f4       f5       f6       f7       f8       f9       f10      _        _        _
+  _        _        _        _        _        _        _        _        @qwerty  _        f11      _        _
+  _        _        _        _        _        _        _        _        _        _        f12      _        _
   _        _        _        _                          _                          _        _        _        _        _
 )
 
 (defalias
   ;; layers
-  default (layer-switch default)
-  colemak (layer-switch colemak-dh)
+  colemak (layer-switch colemak)
   qwerty  (layer-switch qwerty)
 
+  fn  (layer-toggle function)
   ext (layer-toggle extend)
   sym (layer-toggle symbol)
-  fn  (layer-toggle function)
+  adj (layer-toggle adjust)
 
   esc_sym (tap-next esc  @sym)
   tab_sym (tap-next tab  @sym)
@@ -105,16 +103,6 @@
   met_e (tap-hold-next-release 175 e rmet)
   alt_i (tap-hold-next-release 175 i lalt)
   ctl_o (tap-hold-next-release 175 o rctl)
-
-  ;; qwerty home row mods
-  ;; ctl_a (tap-hold-next-release 175 a lctl)
-  alt_s (tap-hold-next-release 175 s lalt)
-  met_d (tap-hold-next-release 175 d lmet)
-  sft_f (tap-hold-next-release 175 f lsft)
-  sft_j (tap-hold-next-release 175 j rsft)
-  met_k (tap-hold-next-release 175 k rmet)
-  alt_l (tap-hold-next-release 175 l lalt)
-  ctl_; (tap-hold-next-release 175 ; rctl)
 )
 
 (defcfg
