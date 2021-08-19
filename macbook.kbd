@@ -40,7 +40,7 @@
   _        _        _        _        _        _        _        _        _        _        _        _        _        _
   _        _        _        _        _        _        pgup     @prv_wrd up       @nxt_wrd @del_lne bspc     _        _
   _        lctl     lalt     lmet     lsft     caps     pgdn     left     down     right    del      bspc     _
-  _        @undo    @cut     @copy    @paste   @redo    _        @lne_beg _        @lne_end _        _        _
+  _        @cut     @copy    @paste   @redo    @undo    _        @lne_beg _        @lne_end _        _        _
   _        _        _        _                          _                          _        _        _        _        _
 )
 
