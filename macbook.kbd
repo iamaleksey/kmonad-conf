@@ -11,7 +11,7 @@
   _        brdn     brup     lp       mctl     bldn     blup     prev     pp       next     mute     vold     volu
   _        _        _        _        _        _        _        _        _        _        _        _        _        _
   _        q        w        f        p        b        j        l        u        y        ;        _        _        _
-  @esc_sym @ctl_a   @alt_r   @met_s   @sft_t   g        m        @sft_n   @met_e   @alt_i   @ctl_o   _        _
+  @esc_ext @ctl_a   @alt_r   @met_s   @sft_t   g        m        @sft_n   @met_e   @alt_i   @ctl_o   _        _
   _        x        c        d        v        z        k        h        _        _        _        _        _
   @adj     _        _        @tab_sym                   _                          @bsp_ext _        _        _        _
 )
@@ -71,8 +71,8 @@
   sym (layer-toggle symbol)
   adj (layer-toggle adjust)
 
-  esc_sym (tap-next esc  @sym)
   tab_sym (tap-next tab  @sym)
+  esc_ext (tap-next esc  @ext)
   bsp_ext (tap-next bspc @ext)
 )
 
