@@ -12,7 +12,7 @@
   _        _        _        _        _        _        _        _        _        _        _        _        _        _
   _        q        w        f        p        b        j        l        u        y        ;        _        _        _
   @esc_ext @ctl_a   @alt_r   @met_s   @sft_t   g        m        @sft_n   @met_e   @alt_i   @ctl_o   _        _
-  _        x        c        d        v        z        k        h        _        _        _        _        _
+  _        x        c        @hpr_d   v        z        k        @hpr_h   _        _        _        _        _
   @adj     _        _        @tab_sym                   _                          @bsp_ext _        _        _        _
 )
 
@@ -94,11 +94,15 @@
 )
 
 (defalias
+  hyper C-A-M-S
+
   ;; colemak-dh home row mods
   ctl_a (tap-hold-next-release 175 a lctl)
   alt_r (tap-hold-next-release 175 r lalt)
   met_s (tap-hold-next-release 175 s lmet)
   sft_t (tap-hold-next-release 175 t lsft)
+  hpr_d (tap-hold-next-release 175 d @hyper)
+  hpr_h (tap-hold-next-release 175 h @hyper)
   sft_n (tap-hold-next-release 175 n rsft)
   met_e (tap-hold-next-release 175 e rmet)
   alt_i (tap-hold-next-release 175 i lalt)
