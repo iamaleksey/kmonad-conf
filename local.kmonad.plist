@@ -6,7 +6,7 @@
 		<string>local.kmonad</string>
 		<key>ProgramArguments</key>
 		<array>
-			<string>/Users/aleksey/kmonad/bin/kmonad</string>
+			<string>/Users/aleksey/.local/bin/kmonad</string>
 			<string>/Users/aleksey/Code/kmonad-conf/macbook.kbd</string>
 		</array>
 		<key>RunAtLoad</key>
