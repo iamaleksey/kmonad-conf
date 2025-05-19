@@ -12,7 +12,7 @@
   _        _        _        _        _        _        _        _        _        _        _        _        _        _
   _        q        w        f        p        b        j        l        u        y        ;        _        _        _
   @esc_ext @ctl_a   @alt_r   @met_s   @sft_t   g        m        @sft_n   @met_e   @alt_i   @ctl_o   _        _
-  _        x        c        @hpr_d   v        z        k        @hpr_h   _        _        _        _        _
+  z        x        c        @hpr_d   v        XX       k        @hpr_h   _        _        _        _        _
   @adj     _        _        @tab_sym                   _                          @bsp_ext _        _        _        _
 )
 
@@ -39,7 +39,7 @@
   _        _        _        _        _        _        _        _        _        _        _        _        _        _
   _        1        2        3        4        5        6        7        8        9        0        _        _        _
   ~        !        +       \(       \)        &        |        -        =       \_        *        _        _
-  _        @        {        }        #        $        `        [        ]        %        ^        _        _
+  $        @        {        }        #        _        `        [        ]        %        ^        _        _
   _        _        _        _                          _                          _        _        _        _        _
 )
 
@@ -48,7 +48,7 @@
   _        _        _        _        _        _        _        _        _        _        _        _        _        _
   _        _        _        _        _        _        pgup     @prv_wrd up       @nxt_wrd @del_lne bspc     _        _
   _        lctl     lalt     lmet     lsft     caps     pgdn     left     down     right    del      bspc     _
-  _        @cut     @copy    @paste   @redo    @undo    _        @lne_beg _        @lne_end _        _        _
+  @undo    @cut     @copy    _        @paste   _        _        @lne_beg _        @lne_end _        _        _
   _        _        _        _                          _                          _        _        _        _        _
 )
 
